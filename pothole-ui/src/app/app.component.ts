@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pothole-ui';
+  buttonClicks = 0;
+  displayString = 'Potholes Detected: ' + this.buttonClicks;
+
+  onButtonClick() {
+    this.buttonClicks++;
+    this.displayString = 'Potholes Detected: ' + this.buttonClicks;
+  }
+
 }
