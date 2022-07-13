@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,13 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'pothole-ui';
-  buttonClicks = 0;
-  displayString = 'Potholes Detected: ' + this.buttonClicks;
 
-  onButtonClick() {
-    this.buttonClicks++;
-    this.displayString = 'Potholes Detected: ' + this.buttonClicks;
-  }
 
 }
