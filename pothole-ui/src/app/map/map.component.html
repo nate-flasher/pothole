@@ -1,2 +1,11 @@
 <p>This is the map page</p>
+<google-map
+  height="500px"
+  width="100%"
+  [center]="center">
+  <map-marker *ngFor="let markerPosition of markerPositions"
+              [position]="markerPosition"
+              [options]="markerOptions"></map-marker>
+></google-map>
 <button (click)="goToPage('')">Go home</button> 
+

@@ -9,6 +9,9 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MapComponent } from './map/map.component';
 import { HomeComponent } from './home/home.component'
 
+import { GoogleMapsModule } from '@angular/google-maps'
+
+import { DataServiceService } from './data-service.service';
 
 @NgModule({
   declarations: [
@@ -20,9 +23,10 @@ import { HomeComponent } from './home/home.component'
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSliderModule
+    MatSliderModule,
+    GoogleMapsModule
   ],
-  providers: [],
+  providers: [DataServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
