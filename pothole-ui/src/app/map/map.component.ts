@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DataServiceService } from '../data-service.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-map',
@@ -8,7 +10,9 @@ import { DataServiceService } from '../data-service.service';
 })
 export class MapComponent implements OnInit {
 
-  constructor(private service: DataServiceService) {
+
+  constructor(private service: DataServiceService, private router:Router) {
+
 
    }
 
@@ -28,7 +32,9 @@ export class MapComponent implements OnInit {
 
     this.markerPositions = this.service.getDataObject();
   }
-
-
+  
+  goToPage(pageName:string):void{
+    this.router.navigate([`${pageName}`]);
+  }
 
 }
