@@ -1,4 +1,3 @@
-<p>This is the map page</p>
 <google-map
   height="500px"
   width="100%"
@@ -6,6 +5,8 @@
   <map-marker *ngFor="let markerPosition of markerPositions"
               [position]="markerPosition"
               [options]="markerOptions"></map-marker>
-></google-map>
-<button (click)="goToPage('')">Go home</button> 
+</google-map>
+
+    <mat-icon class="home_button" (click)="goToPage('')" >home</mat-icon> 
+      
 

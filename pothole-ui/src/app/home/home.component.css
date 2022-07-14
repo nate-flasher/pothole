@@ -1,9 +1,91 @@
+
+
+@media (max-width: 600px) {
 .center {
+
     position:absolute;
-    top: 50%; left: 50%;
-    transform: translateY(-50%);
-    transform: translateX(-50%);
-    height:400px !important;
-    width:400px !important;
+    top: 40%; left: 37.5%;
+   
+    width:100px !important;
+    display: table; text-align: center !important;
+  }
+}
+  .displayString{
+    position:absolute; 
+    display: table; text-align: center;
+
+   top: 200px;
+  }
+  .button1 {
+    color : black;
+    border:transparent;
+   background-color:whitesmoke;
+   border: solid #00a2ed 2px;
+   outline:none;
+   display: table-cell; vertical-align: bottom;
+   position:absolute; 
+  top: 350px;
+   width:100px;
+   
+   transform: scale(2);
   }
   
+  .button1:not([disabled]):hover {
+    background-color: rgba(158, 158, 158, 0.2);
+  }
+  
+  .button1[disabled] {
+    color : rgba(0, 0, 0, 0.26);
+    background-color: transparent;
+  }
+.report{
+  position:absolute; 
+  
+  width: 100%;
+  transform: scale(8);
+}
+.report:not([disabled]):click {
+  color: gray;
+}
+.report_icon{
+  color: #00a2ed;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+  
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+  
+}
+
+
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+  
+}
+
+/* Style the active link (or home/logo) */
+.active {
+  background-color: #00a2ed ;
+  color: white;
+  
+}

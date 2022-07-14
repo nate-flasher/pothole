@@ -1,8 +1,30 @@
+
+<body>
+
+    <div class="topnav">
+        <a href="#home" class="active">PotOrNah</a>
+       
+        <div id="myLinks">
+          
+        </div>
+       
+        
+      </div>
+      
 <div class="center">
-    <button mat-raised-button (click)="onButtonClick()" color="primary">Report Pothole</button>
-    <h1>{{displayString}}</h1>
+
+    <div class="report">
+    <mat-icon class="report_icon" mat-raised-button (click)="onButtonClick()" color="primary">report</mat-icon>
+    </div>
   
-  
-  <button (click)="goToPage('map')">See map</button> 
+    <div >
+        <h1 class="displayString">{{displayString}}</h1>
+    </div>
+    <div>
+  <mat-icon class="button1" (click)="goToPage('map')" >map</mat-icon> 
+    </div>
+    
+    
 </div>
+</body>
   
