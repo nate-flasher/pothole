@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { DataServiceService } from '../data-service.service';
 
 @Component({
   selector: 'app-map',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: DataServiceService) {
 
-  ngOnInit(): void {
+   }
+
+  center: google.maps.LatLngLiteral = {lat: 0, lng: 0};
+
+  markerOptions: google.maps.MarkerOptions = {draggable: false};
+
+  markerPositions: google.maps.LatLngLiteral[] = [];
+
+  ngOnInit() {
+    navigator.geolocation.getCurrentPosition((position) => {
+      this.center = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
+      }
+    })
+
+    this.markerPositions = this.service.getDataObject();
   }
+
+
 
 }
