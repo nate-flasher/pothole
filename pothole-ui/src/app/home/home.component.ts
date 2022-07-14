@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
 
   title = 'pothole-ui';
   buttonClicks = 0;
-  displayString = 'Potholes Detected: ' + this.buttonClicks;
+  displayString = 'Pothole Count: ' + this.buttonClicks;
   public lat = 0;
   public long = 0;
   markerPositions: google.maps.LatLngLiteral[] = [];
@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
 
   onButtonClick() {
     this.buttonClicks++;
-    this.displayString = 'Potholes Detected: ' + this.buttonClicks;
+    this.displayString = 'Pothole Count: ' + this.buttonClicks;
     this.addMarker();
     this.service.setDataObject(this.markerPositions);
   }

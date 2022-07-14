@@ -13,6 +13,8 @@ import { GoogleMapsModule } from '@angular/google-maps'
 
 import { DataServiceService } from './data-service.service';
 
+import { MatIconModule } from '@angular/material/icon'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,8 @@ import { DataServiceService } from './data-service.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    MatIconModule
   ],
   providers: [DataServiceService],
   bootstrap: [AppComponent]

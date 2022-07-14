@@ -1,8 +1,12 @@
-.center {
+.home_button{
     position:absolute;
-    top: 50%; left: 50%;
-    transform: translateY(-50%);
-    transform: translateX(-50%);
-    height:400px !important;
-    width:400px !important;
+    top: 715px; left: 35%;
+   
+    width:100px !important;
+    display: table; text-align: center !important;
+
+    transform: scale(3);
+}
+.home_button:not([disabled]):hover {
+    background-color: rgba(158, 158, 158, 0.2);
   }
