@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Coordinates } from '../coordinates';
 import { DataServiceService } from '../data-service.service';
 
 @Component({
@@ -19,6 +20,10 @@ export class HomeComponent implements OnInit {
   public lat = 0;
   public long = 0;
   markerPositions: google.maps.LatLngLiteral[] = [];
+  model: Coordinates = {
+    lat: this.lat,
+    long: this.long
+  };
 
 
   onButtonClick() {
@@ -26,6 +31,13 @@ export class HomeComponent implements OnInit {
     this.displayString = 'Potholes Detected: ' + this.buttonClicks;
     this.addMarker();
     this.service.setDataObject(this.markerPositions);
+
+    this.getCurrentLocation();
+    this.model.lat = this.lat;
+    this.model.long = this.long;
+    if (this.lat != 0 && this.long != 0) {
+      this.service.addData(this.model);
+    }
   }
 
   addMarker() {

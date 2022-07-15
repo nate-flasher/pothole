@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "pothole-86446": {
+      "hosting": {
+        "pothole-ui": [
+          "pothole-86446"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "pothole-86446"
+  }
+}

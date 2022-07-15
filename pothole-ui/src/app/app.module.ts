@@ -12,6 +12,11 @@ import { HomeComponent } from './home/home.component'
 import { GoogleMapsModule } from '@angular/google-maps'
 
 import { DataServiceService } from './data-service.service';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import {AngularFireModule} from '@angular/fire/compat';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +29,10 @@ import { DataServiceService } from './data-service.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [DataServiceService],
   bootstrap: [AppComponent]

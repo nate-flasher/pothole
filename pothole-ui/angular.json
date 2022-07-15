@@ -96,6 +96,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "pothole-ui:build:production",
+            "firebaseProject": "pothole-86446",
+            "firebaseHostingSite": "pothole-86446"
+          }
         }
       }
     }

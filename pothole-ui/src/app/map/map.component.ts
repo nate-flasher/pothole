@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DataServiceService } from '../data-service.service';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Coordinates } from '../coordinates';
 
 
 @Component({
@@ -22,7 +24,9 @@ export class MapComponent implements OnInit {
 
   markerPositions: google.maps.LatLngLiteral[] = [];
 
-  ngOnInit() {
+  response: Coordinates[] = []
+
+  async ngOnInit() {
     navigator.geolocation.getCurrentPosition((position) => {
       this.center = {
         lat: position.coords.latitude,
@@ -30,9 +34,13 @@ export class MapComponent implements OnInit {
       }
     })
 
-    this.markerPositions = this.service.getDataObject();
+    //this.markerPositions = this.service.getDataObject();
+
+    await this.service.getData().then((coordinates) => this.response = coordinates as Coordinates[])
+    await this.response.forEach((coordinate) =>  this.markerPositions.push(new google.maps.LatLng(coordinate.lat, coordinate.long).toJSON()))
   }
-  
+
+
   goToPage(pageName:string):void{
     this.router.navigate([`${pageName}`]);
   }
